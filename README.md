@@ -1,2 +1,1 @@
-# ZamandaSicrama
-Yazılım mühendisliği dersi grup projesidir. Proje içeriği unity platformunda yapılacak olan 2d bir oyundur.
+Bu kısımda oyunun zamanda sıçrama mekaniği geliştirilecektir. Oyunda bu kısım tasarlanan saat üzerinden yürütülecektir. Oyuncu saati kullandığında geçmişle gelecek arasında geçiş yapabilecek, belirli nesnelerle etkileşime girecek ve seçimleri sonucunda olayları değiştirebilecektir.
