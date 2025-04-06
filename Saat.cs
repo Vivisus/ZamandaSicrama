@@ -33,6 +33,3 @@ public class Saat : MonoBehaviour  // Bu kısımdaki saat objesi karakterin zama
     }
 
     
-        Debug.Log("Zaman değişti! Yeni zaman: " + (isInPast ? "Geçmiş" : "Gelecek"));
-    }
-}
