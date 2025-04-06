@@ -3,14 +3,15 @@ using UnityEngine;
 
 public class Saat : MonoBehaviour  // Bu kısımdaki saat objesi karakterin zamanda sıçrama yapacağı nesnedir
 {
-    public GameObject pastObjects;  
-    public GameObject futureObjects; 
-
+    public TimeTravel timeTravelScript;
     private bool isInPast = false;  // Şu an geçmişte mi onu kontrol ediyoruz
 
     private void OnMouseDown() 
     {
-        ZamandaSicra();
+         if (timeTravelScript != null)
+         {
+         timeTravelScript.ZamandaSicra(); // TimeTravel içindeki fonksiyonu çağırıyoruz
+         }
     }
 
     private void Update()
@@ -21,27 +22,17 @@ public class Saat : MonoBehaviour  // Bu kısımdaki saat objesi karakterin zama
             Vector2 dokunmaKonumu = Camera.main.ScreenToWorldPoint(dokunma.position);
             Collider2D tıklananObje = Physics2D.OverlapPoint(dokunmaKonumu);
 
-            if (tıklananObje != null && tıklananObje.gameObject == gameObject)
+           if (tıklananObje != null && tıklananObje.gameObject == gameObject)
             {
-                ZamandaSicra();
+                if (timeTravelScript != null)
+                {
+                    timeTravelScript.ZamandaSicra(); // Saat tıklanınca zamanı değiştir
+                }
             }
         }
     }
 
-    void ZamandaSicra()
-    {
-        isInPast = !isInPast;
-
-        foreach (GameObject obj in pastObjects)
-        {
-            obj.SetActive(isInPast);  
-        }
-
-        foreach (GameObject obj in futureObjects)
-        {
-            obj.SetActive(!isInPast); 
-        }
-
+    
         Debug.Log("Zaman değişti! Yeni zaman: " + (isInPast ? "Geçmiş" : "Gelecek"));
     }
 }
