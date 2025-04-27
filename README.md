@@ -4,3 +4,5 @@
 3.Hafta) Bu hafta önceki haftalarda yazılan zamanda sıçrama kodu saat objesinin koduyla birleştirildi. Artık saate tıklandığında zamanda sıçrama kodundaki zamandasicra() kodu çalıştırılacak ve geçmiş/ gelecek nesneler isInPast değişkeninin değerine göre yüklenecektir. Saat kodu içerisinden zamandasicra() kodu kaldırılıp TimeTravel kodundaki toggletimetravel() kodu yerine yazılmıştır. Böylece kodlar arasındaki bağlantı sorunu ortadan kaldırılmıştır.
 4.Hafta) Bu hafta sınav haftasına çalıştığımdan dolayı projede herhangi bir değişiklik yapılmamıştır.
 5.Hafta) Vize haftası olduğundan dolayı projede değişiklik yapılmamıştır.
+-------
+6.Hafta) Bu hafta saat objesi unitye gameobject şeklinde eklendi. Saat kodu objeye bağlandı ve tıklanması halinde zamandasicra() fonksiyonu çağırılacak şekilde scripler eklendi. Yapılacak testlere göre kodda duruma göre yeni değişiklikler yapılabilir. Ayrıca zaman_yönetimi kodundaki hatalar düzeltildi. İçindeki fonksiyon public hale getirildi.
