@@ -4,6 +4,7 @@ using Firebase;
 using Firebase.Firestore;
 using Firebase.Extensions;
 using Firebase.Auth;
+using System.Collections.Generic;
 
 
 public class GeriBildirim : MonoBehaviour
@@ -13,23 +14,24 @@ public class GeriBildirim : MonoBehaviour
     public Text geribildirimText;
     public Button kapatButton;
     private FirebaseFirestore database;
-
+    public GameObject GeriBildirimPanel;
 
 
      
     void Start()
     {
-       FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>     // firebasein düzgün kurulu olup olmadýðýný kontrol ediyoruz
+       FirebaseApp.CheckAndFixDependenciesAsync().ContinueWithOnMainThread(task =>     // firebasein dÃ¼zgÃ¼n kurulu olup olmadigini kontrol ediyoruz
        { if (task.Result == DependencyStatus.Available)
            {
-               database = FirebaseFirestore.DefaultInstance;    // firestore kýsmýný aktif hale getiriyor
+               database = FirebaseFirestore.DefaultInstance;    // firestore kismini aktif hale getiriyor
                FirebaseAuth.DefaultInstance.SignInAnonymouslyAsync();
            }
            else {
-               Debug.LogError("Firebase ile baðlantý kurulamadý");
+               Debug.LogError("Firebase ile baÄŸlantÄ± kurulamadÄ±");
                }
        });
         geribildirimButton.onClick.AddListener(FeedbackGonder);
+        kapatButton.onClick.AddListener(kapat);
     }
 
 
@@ -37,19 +39,28 @@ public class GeriBildirim : MonoBehaviour
     {
         if (string.IsNullOrEmpty(metinField.text))
         {
-            Debug.LogWarning("Görüþ boþ olamaz");
+            Debug.LogWarning("GÃ¶rÃ¼ÅŸ boÅŸ olamaz");
             return;
         }
-        var text = metinField.text;
-        database.Collection("Feedbacks").AddAsync(text).ContinueWithOnMainThread(task=>
+        var feedbackveri = new Dictionary<string, object>
+        {
+            {"text", metinField.text},
+            {"tarih", Timestamp.GetCurrentTimestamp()}
+        };
+        database.Collection("Feedbacks").AddAsync(feedbackveri).ContinueWithOnMainThread(task=>
         {
             if (task.IsCompleted) {
-            Debug.Log("Görüþ gönderildi");}
+            Debug.Log("GÃ¶rÃ¼ÅŸ gÃ¶nderildi");}
+            metinField.text = "";
             if (task.IsFaulted)
             {
-                Debug.LogError("Görüþ gönderilemedi" + task.Exception.ToString());
+                Debug.LogError("GÃ¶rÃ¼ÅŸ gÃ¶nderilemedi" + task.Exception.ToString());
             }
         });
+    }
+    void kapat()
+    {
+        GeriBildirimPanel.SetActive(false);
     }
     
 }
