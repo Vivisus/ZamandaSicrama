@@ -4,7 +4,6 @@ using UnityEngine;
 public class Saat : MonoBehaviour  // Bu kısımdaki saat objesi karakterin zamanda sıçrama yapacağı nesnedir
 {
     public TimeTravel timeTravelScript;
-    private bool isInPast = false;  // Şu an geçmişte mi onu kontrol ediyoruz
 
     private void OnMouseDown() 
     {
