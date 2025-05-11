@@ -1,3 +1,3 @@
-# ZamandaSicrama
-Yazılım mühendisliği dersi grup projesidir. Proje içeriği unity platformunda yapılacak olan 2d bir oyundur.
-3.Haftanın Güncellemeleri Her iki Geliştirici Tarafından Yapılmıştır
+Geri bildirim kodunda oyuncular ana sayfada oyun hakkındaki görüş ve önerilerini bildirebileceklerdir. Yazılan metinler Firebase kullanılarak depolanmaktadır. Firebase Firestore unitye entegre edilmiştir. Oyuncu metin yazdığında Firestoreda oluşturulacak olan "Feedbacks" koleksiyonuna metinler depolanıcaktır. Kodda start fonksiyonunda, oyuncu için Firebase'e anonim bir şekilde oturum açılmaktadır. Kullanıcı bu kısımları görmeyecektir. Böylece kullanıcı sadece aklındaki görüşleri yazacaktır, ek bir oturum istenmediğinden katılım olasılığının daha fazla olacağı düşünülmektedir. Kullanıcı boş bir metin göndermeye çalışırsa "Görüş boş olamaz" uyarısı görülecektir. 
+--------
+Hata bildirme kodunda geri bildirimle benzer ilerleyiş vardır. Kullanıcı oyunu oynarken anlık olarak karşılaştığı hataları bildirebilecektir. Ekrana eklenecek hata bildirme ikonuna tıklayınca bu kod çalışacaktır. Metin kutusuna hatayı yazıcak ve gönderebilecektir. Eğer boş metin göndermeye çalışırsa "Lütfen bu alanı doldurunu" uyarısı verilecektir. Firestoreda "Hatalar" koleksiyonu altında gönderilen veriler depolanıcaktır.
