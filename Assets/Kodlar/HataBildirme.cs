@@ -5,7 +5,7 @@ using Firebase.Firestore;
 using Firebase.Extensions;
 using Firebase.Auth;
 using System.Collections.Generic;
-// firebase storage kýsmýný import et!!!!!
+
 
 public class HataBildirme : MonoBehaviour
 {
@@ -13,7 +13,6 @@ public class HataBildirme : MonoBehaviour
     public Button hataGonderButton;
     public Button hataKapatButton;
     public Text hataText;
-    public Button ekranButton;
     private FirebaseFirestore database;
     public GameObject HataPanel;
 
@@ -34,7 +33,6 @@ public class HataBildirme : MonoBehaviour
         });
         hataGonderButton.onClick.AddListener(HataGonder);
         hataKapatButton.onClick.AddListener(HataKapat);
-        ekranButton.onClick.AddListener(EkranGoruntusu);
 
     }
 
@@ -61,17 +59,10 @@ public class HataBildirme : MonoBehaviour
                 Debug.LogError("Hata gönderilemedi" + task.Exception.ToString());
             }
         });
-
-
-
-
     }
     void HataKapat() { 
 
         HataPanel.SetActive(false);
     }
-    void EkranGoruntusu()
-    {
-        // ekran görüntüsü alma fonksiyonunu yaz
-    }
+
 }
