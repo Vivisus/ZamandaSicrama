@@ -1,0 +1,86 @@
+{
+    "npcs":[
+        {
+            "npcName": "Lora",
+            "isInPast": "False",
+            "diyalog": ["Dokunma ona!",
+            "Hmm? Bu da ne böyle, bunu daha önce hiç görmedim",
+            "Neden kapağı açılmıyor?",
+            "Bunu birisine sormalıyım!"],
+            "choices": [
+                {
+                    "seçenek": "Ailesine sor",
+                    "nextDiyalog":[
+                        {
+                            "npcName":"Lora",
+                            "isInPast": "False",
+                            "diyalog": "Ailesine sormam daha iyi olacak."
+                        },
+                        {
+                            "npcName": "Anne",
+                            "isInPast": "False",
+                            "diyalog": "Lora? Burada ne yapıyorsun?"
+                        },
+                        {
+                            "npcName":"Lora",
+                            "isInPast": "False",
+                            "diyalog":"Merhaba teyze, içeri geçebilir miyim?"
+                        },
+                        {
+                            "npcName":"Anne",
+                            "isInPast": "False",
+                            "diyalog":"Tabi, gel."
+                        },
+                        {
+                            "npcName":"Lora",
+                            "isInPast": "False",
+                            "diyalog":"Nasılsınız teyze?"
+                        },
+                        {
+                            "npcName":"Anne",
+                            "isInPast": "False",
+                            "diyalog":["İyi olmaya çalışıyorum, ama acısı her geçen gün artıyor.",
+                            "Sana gönderdiğim kutuyu aldın mı? Ben onları isteyebileceğini düşündüm. Tarçınım seninle bir anı kutusu yapmış.."]
+                        },
+                        {
+                            "npcName":"Lora",
+                            "isInPast": "False",
+                            "diyalog":["Evet kutuyu aldım, beni düşündüğünüz için teşekkür ederim. Onların anlamı benim için çok büyüktü.",
+                        "Aslında bunun hakkında konuşmaya gelmiştim. Eşyaların arasında daha önce Tarçında görmediğim garip bir eşya var. Saate benziyor ama kapağını açamadım."]
+                        },
+                        {
+                            "npcName":"Anne",
+                            "isInPast": "False",
+                            "diyalog":["Bu Tarçına mı aitti? Çok garip kutuya koyduğumu hatırlamıyorum. Daha önce bunu hiç görmedim.",
+                        "Tarçın son zamanlarda garip davranıyordu. Eve gelince direkt odasına gidiyor saatlerce çıkmıyordu.",
+                        "Her geçen gün daha az konuşmaya başlamıştı, bir şey onu rahatsız ediyor gibiydi. Belki o zamanlar almıştır bunu.",
+                    "Ben aranızın bozulduğunu düşünmüştüm bu yüzden üzerine gitmedim. Ama böyle olacağını bilseydim…"]
+                        }
+                        
+                    ],"choices":[
+                        {
+                            "seçenek": "Hayır, Tarçınla hiçbir sorunumuz yoktu. İlişkimiz çok güzeldi.",
+                            "npcName":"Anne",
+                            "diyalog":"Kızımı mutlu ettiğin için teşekkür ederim. Yardım edemediğim için üzgünüm. Belki odasında bununla alakalı bir şeyler vardır. Oraya bakabilirsin. Şimdi yalnız kalmak istiyorum."
+                        },
+                        {
+                            "seçenek":"Evet, aramız son zamanlarda çok bozulmuştu. Sürekli kavga ederdik.",
+                            "npcName":"Anne",
+                            "diyalog":"Odasında bir şeyler olabilir. Oraya bak daha sonra da lütfen git."
+                        }
+
+                    ],
+                    "npcName":"Lora",
+                    "diyalog":["Bunu yapmam doğru mu?",
+                "Bunu ne zaman çekildi, o biraz farklı görünüyor.",
+                "Beni kurtaracağını biliyorum sevgilim mi?13/05/1854. Bu tarih de ne?",
+                "Bunu evde düşüneceğim"]
+                },
+                {
+                    "seçenek": "Arkadaşlarına sor"
+                }
+            ]
+            
+        }
+    ]
+}
